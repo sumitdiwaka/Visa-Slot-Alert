@@ -104,11 +104,11 @@ Use the sidebar to navigate between Dashboard, All Alerts, Create Alert, and Ana
 visa-slot-tracker/
 ├── backend/
 │   ├── src/
-│   │   ├── controllers/     # Request handlers
+│   │   ├── controllers/     # Request handlers (AlertController.js)
 │   │   ├── middleware/      # Custom middleware (logger, validator)
 │   │   ├── models/         # Data models (Alert class)
-│   │   ├── routes/         # API route definitions
-│   │   ├── services/       # Business logic layer
+│   │   ├── routes/         # API route definitions (alertRoutes.js)
+│   │   ├── services/       # Business logic layer (AlertService.js)
 │   │   ├── utils/          # Constants and utilities
 │   │   └── app.js          # Main Express application
 │   ├── .env.example        # Environment variables template
@@ -116,7 +116,13 @@ visa-slot-tracker/
 └── frontend/
     ├── src/
     │   ├── components/     # Reusable React components
-    │   ├── services/       # API service layer
+    │   │   ├── Dashboard.jsx
+    │   │   ├── AlertList.jsx
+    │   │   ├── AlertForm.jsx
+    │   │   ├── Analytics.jsx
+    │   │   ├── Sidebar.jsx
+    │   │   └── Header.jsx
+    │   ├── services/       # API service layer (api.js)
     │   ├── utils/          # Constants and helpers
     │   ├── App.jsx         # Main application component
     │   └── main.jsx        # Application entry point
@@ -133,6 +139,18 @@ POST	    /alerts	               Create new alert
 PUT	       /alerts/:id	           Update alert
 PATCH	  /alerts/:id/status	   Update alert status only
 DELETE	 /alerts/:id	           Delete alert
+
+
+
+Endpoints
+Method	Endpoint	Description	Parameters
+GET	/alerts	Get all alerts	?country, ?status, ?visaType, ?city, ?page, ?limit
+GET	/alerts/:id	Get single alert	:id - Alert ID
+POST	/alerts	Create new alert	{country, city, visaType, status}
+PUT	/alerts/:id	Update alert	:id - Alert ID
+PATCH	/alerts/:id/status	Update status	:id - Alert ID, {status}
+DELETE	/alerts/:id	Delete alert	:id - Alert ID
+GET	/health	Health check	None
 
 
 
