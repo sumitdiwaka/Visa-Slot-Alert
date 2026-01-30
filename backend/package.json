@@ -1,0 +1,23 @@
+{
+  "name": "visa-slot-tracker-backend",
+  "version": "1.0.0",
+  "description": "Visa Slot Alert Tracking API for The Flying Panda",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.0.0",
+    "morgan": "^1.10.0",
+    "uuid": "^9.0.0",
+    "winston": "^3.19.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
