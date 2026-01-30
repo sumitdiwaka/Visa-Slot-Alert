@@ -129,6 +129,35 @@ visa-slot-tracker/
     ├── .env.example        # Frontend environment variables
     └── package.json
 
+## Project Structure
+visa-slot-tracker/
+├── backend/
+│ ├── src/
+│ │ ├── controllers/ # Request handlers (AlertController.js)
+│ │ ├── middleware/ # Custom middleware (logger, validator)
+│ │ ├── models/ # Data models (Alert class)
+│ │ ├── routes/ # API route definitions (alertRoutes.js)
+│ │ ├── services/ # Business logic layer (AlertService.js)
+│ │ └── utils/ # Constants and utilities
+│ ├── app.js # Main Express application
+│ ├── .env.example # Environment variables template
+│ └── package.json
+└── frontend/
+├── src/
+│ ├── components/ # Reusable React components
+│ │ ├── Dashboard.jsx
+│ │ ├── AlertList.jsx
+│ │ ├── AlertForm.jsx
+│ │ ├── Analytics.jsx
+│ │ ├── Sidebar.jsx
+│ │ └── Header.jsx
+│ ├── services/ # API service layer (api.js)
+│ ├── utils/ # Constants and helpers
+│ ├── App.jsx # Main application component
+│ └── main.jsx # Application entry point
+├── .env.example # Frontend environment variables
+└── package.json
+
 🔌 API Endpoints
 Base URL: http://localhost:5000/api
 
