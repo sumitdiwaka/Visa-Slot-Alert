@@ -12,11 +12,13 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
+// Update the CORS middleware
 app.use(cors({
   origin: [
     'http://localhost:5173', // Local development
-    'https://visa-slot-alert-seven.vercel.app/', // Your Vercel frontend
-    'https://visa-slot-alert-seven.vercel.app/' // Your actual Vercel domain
+    'https://visa-slot-alert-seven.vercel.app', // Your Vercel frontend
+    'https://visa-slot-alert.vercel.app', // Also add this in case
+    'https://visa-slot-alert-seven.vercel.app' // Exact domain
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
